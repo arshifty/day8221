@@ -1,0 +1,98 @@
+
+<html>
+  <head>
+  
+  </head>
+  
+  <body>
+  
+<hr>
+
+<b>EmployeeComponent</b>
+
+    <h1> employee list from Employee class  </h1>
+  
+  <table>  
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>School</th>
+      <th>Contact</th>
+    </tr>
+    <tr>
+      <td> {{employee.id}}  </td>
+      <td> {{employee.name}} </td>
+      <td> {{employee.school}}  </td>
+      <td> {{employee.contact}}  </td>
+    </tr> 
+  </table> 
+  <hr>
+
+
+
+  <hr>
+    <h1>  using employee list </h1>  
+  <table>  
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>School</th>
+      <th>Contact</th>
+    </tr>
+    <tr  *ngFor="let employee of employes">
+      <td> {{employee.id}}  </td>
+      <td  (click) = "SelectedEmployee(employee)" style="cursor: pointer;"   > {{employee.name}} </td>
+      <td> {{employee.school}}  </td>
+      <td> {{employee.contact}}  </td>
+    </tr> 
+  </table> 
+  <hr>
+
+<b> Clicking the name of the  employee list table   </b>
+
+   <div *ngIf="selected_employee" > 
+
+    <table>  
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>School</th>
+        <th>Contact</th>
+      </tr>
+      <tr>
+        <td> {{selected_employee.id}}  </td>
+        <td> {{selected_employee.name}} </td>
+        <td> {{selected_employee.school}}  </td>
+        <td> {{selected_employee.contact}}  </td>
+      </tr> 
+    </table> 
+
+
+   </div>
+
+
+   <hr>
+   <h1>  using employee services</h1>  
+ <table>  
+   <tr>
+     <th>Id</th>
+     <th>Name</th>
+     <th>School</th>
+     <th>Contact</th>
+     <th>Action</th>
+   </tr>
+   <tr  *ngFor="let employee of val">
+     <td> {{employee.id}}  </td>
+     <td  (click) = "SelectedEmployee(employee)" style="cursor: pointer;"   > {{employee.name}} </td>
+     <td> {{employee.school}}  </td>
+     <td> {{employee.contact}}  </td>
+     <td> 
+      <button routerLink="/detail/{{employee.id}}" >  View Details </button> 
+       </td>
+
+   </tr> 
+ </table> 
+ <hr>
+
+  </body>  
+  </html>

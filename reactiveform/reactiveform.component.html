@@ -1,0 +1,80 @@
+
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
+</head>
+
+<body>
+
+
+
+  <p>reactiveform works!</p>
+
+
+  <div class="container-fluid">
+
+    {{registrationForm.value | json }}
+
+    <form [formGroup]="registrationForm"  >
+  
+      <div class="form-group">
+      <label>Username</label>
+      <input formControlName= "userName" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Enter Number</label>
+        <input formControlName= "val" type="number" class="form-control">
+        </div>
+  
+        <div class="form-group">
+        <label>Password</label>
+        <input formControlName= "password"  type="password" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input formControlName= "confirmPassword" type="password" class="form-control">
+          </div>
+
+                        <div  formGroupName="address">
+
+                                    <div class="form-group">
+                                      <label>city</label>
+                                      <input formControlName= "city" type="text" class="form-control">
+                                      </div>
+
+                                      <div class="form-group">
+                                      <label>country</label>
+                                      <input formControlName= "country"  type="text" class="form-control">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label>code</label>
+                                        <input formControlName= "code" type="password" class="form-control">
+                                        </div>
+
+
+                        </div>
+
+
+  
+          <button class="btn btn-primary" type="submit">Submit</button>
+  
+    </form>
+
+  
+ 
+  
+
+  </div>
+
+
+
+
+</body>
+</html>
+
+ 
+
